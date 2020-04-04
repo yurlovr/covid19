@@ -72,7 +72,7 @@ export default {
 @import './assets/app.scss';
 .v-content__wrap {
   min-height: 100vh;
-  background-image: url('./assets/images/covid.png'),
+  background-image: url('./assets/images/covid.jpg'),
                     linear-gradient(312.08deg, #6936B1 -0.41%, #2188A6 100%);
   background-size: cover;
   background-repeat: no-repeat;
