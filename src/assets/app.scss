@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  user-select: none;
+  outline: none;
+}
+.layout {
+  position: relative;
+  overflow: hidden;
+  // background-image: linear-gradient(312.08deg, #6936B1 -0.41%, #2188A6 100%);
+  transition: background-image 2s ease;
+  &-promo {
+    background-image: linear-gradient(312.08deg, #6936B1 -0.41%, #2188A6 100%);
+  }
+  &-main {
+    background-image: linear-gradient(312.08deg, #63E2FF -0.41%, #A966FE 100%);
+  }
+  &-instruction {
+    background-image: linear-gradient(312.08deg, #63E2FF -0.41%, #A966FE 100%);
+  }
+  &-measurement-help {
+    background-image: linear-gradient(312.08deg, #63E2FF -0.41%, #A966FE 100%);
+  }
+  &-measurement-bad {
+    background-image: linear-gradient(310.54deg, #FF6363 -0.41%, #FEB866 100%);
+  }
+  &-measurement-good {
+    background-image: linear-gradient(310.54deg, #30E97A -0.41%, #1CD8B6 100%);
+  }
+  &-measurement-error {
+    background-image: linear-gradient(310.54deg, #DC8547 -0.41%, #FEC166 100%);
+  }
+}
+.block {
+  &_country {
+    min-width: 86px;
+    align-self: center;
+    clip-path: ellipse(50% 45% at 50% 50%);
+    padding-top: 10px;
+    padding-bottom: 14px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    align-items: center;
+    text-align: center;
+    color: #6C63FF;
+    background-color: #FFFFFF;
+  }
+  &_text {
+    font-size: 50px;
+    line-height: 57px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 8px 32px rgba(40, 39, 68, 0.4);
+  }
+}
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+.button_start {
+  min-width: 200px;
+  padding: 22px 64px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6C63FF;
+  background-color: #FFFFFF;
+  box-shadow: 4px rgba(0, 0, 0, 0.3);
+  border-radius: 60px;
+  &:nth-child(2n) {
+    margin-left: 50px;
+  }
+}
+.container {
+  color: #FFFFFF;
+}
+.block_container {
+  line-height: 100px;
+  max-width: 75%;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 60px;
+  &-header {
+    margin-top: 50px;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    &-sub {
+      font-size: 42px;
+      font-weight: normal;
+      text-align: center;
+    }
+  }
+}
