@@ -37,6 +37,9 @@ export default {
   data () {
     return {}
   },
+  mounted () {
+    window.scrollTo(0, 0);
+  },
   computed: {
     ...mapGetters('ui', [
       'getView'
@@ -132,7 +135,7 @@ export default {
 }
 @media (min-width: 1240px) {
   .center {
-    margin-top: 140px!important;
+    margin-top: 80px!important;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;

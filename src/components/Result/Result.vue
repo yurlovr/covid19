@@ -5,9 +5,6 @@
         <h1 class="block_container-header">
           Результат:
         </h1>
-        <!-- <h4 class="block_container-header-sub">
-          {{text.subHeader}}
-        </h4> -->
       </div>
     </v-row>
     <v-row class="result">
@@ -102,7 +99,7 @@ export default {
   }
   .button_row {
     align-items: center;
-    margin-bottom: 250px;
+    // margin-bottom: 250px;
   }
   .button_start {
     font-size: 25px;
@@ -161,6 +158,9 @@ export default {
   }
 }
 @media (min-width: 1024px) {
+  .container {
+    margin-top: 0;
+  }
   .block_container-header {
     margin-bottom: 50px;
   }
@@ -178,8 +178,11 @@ export default {
   .block_container-header {
     margin-bottom: 50px;
   }
+  .button_row {
+    margin-bottom: 0;
+  }
   .result {
-    margin-bottom: 100px;
+    // margin-bottom: 140px;
   }
   .block_result {
     .text {

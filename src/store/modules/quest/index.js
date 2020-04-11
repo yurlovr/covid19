@@ -4,6 +4,7 @@ function initialState () {
     currentQuest: null,
     answerCurrentQuest: null,
     allAnswers: [],
+    spo: ''
   }
 }
 
@@ -14,6 +15,7 @@ export default {
     result: null
   },
   actions: {
+    setSPO: ({ commit }, payload) => commit('SET_SPO', payload),
     setInitialState: ({ commit }, payload) => commit('SET_INITIAL_STATE', payload),
     setQuest: ({ commit }, payload) => commit('SET_QUEST', payload),
     setCurrentQuest: ({ commit }, payload) => commit('SET_CURRENT_QUEST', payload),
@@ -28,6 +30,7 @@ export default {
         state[key] = s[key]
       })
     },
+    SET_SPO: (state, payload) => { state.spo = payload.data },
     SET_QUEST: (state, payload) => { state.question = payload.data },
     SET_CURRENT_QUEST: (state, payload) => { state.currentQuest = payload.data },
     SET_RESULT: (state, payload) => { state.result = payload.data },
@@ -35,6 +38,7 @@ export default {
     SET_ALL_ANSWERS: (state, payload) => { state.allAnswers = payload.data },
   },
   getters: {
+    getSPO: state => state.spo,
     getQuest: state => state.question,
     getCurrentQuest: state => state.currentQuest,
     getResult: state => state.result,

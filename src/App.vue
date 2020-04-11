@@ -8,7 +8,9 @@
       />
       <Result v-if="showComponent === SCENARIOS.RESULT"
       />
-      <div class="link">
+      <div class="link"
+          v-show="showComponent === SCENARIOS.MAIN"
+      >
         <p class="link_text">
           *Данные тест носит лишь ознакомительный характер, и сделан для того, чтобы Вы узнали все основные симптомы коронавируса.
           <br/>
@@ -43,7 +45,8 @@ export default {
   }),
   computed: {
     ...mapGetters('ui', [
-      'getView'
+      'getView',
+      'getFocus'
     ]),
     showComponent () {
       return this.getView
@@ -70,6 +73,36 @@ export default {
     background-image: url('./assets/images/covid.png');
   }
 }
+
+@media (orientation: landscape) and (max-width: 600px) {
+  .v-content__wrap {
+    display: flex;
+    background-color: #314886;
+    background-repeat: repeat;
+    background-size: contain;
+    background-image: url('./assets/images/covid.png');
+  }
+}
+@media (orientation: landscape) and (min-width: 728px) {
+  .v-content__wrap {
+    display: flex;
+    background-color: #314886;
+    background-repeat: repeat;
+    background-size: contain;
+    background-image: url('./assets/images/covid.png');
+  }
+}
+@media (min-width: 1240px) {
+  .v-content__wrap {
+    min-height: 100vh;
+    background-image: url('./assets/images/covid.png'),
+                      linear-gradient(312.08deg, #6936B1 -0.41%, #2188A6 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 .link {
   color: #FFFFFF;
   position: absolute;
@@ -98,6 +131,11 @@ export default {
     }
   }
 }
+@media (min-width: 640px) {
+  #app {
+    min-height: 823px;
+  }
+}
 @media (min-width: 728px) {
   .link {
     padding-left: 25px;
@@ -110,6 +148,9 @@ export default {
   }
 }
 @media (min-width: 1024px) {
+  #app {
+    min-height: 903px;
+  }
   .link {
     a {
       top: 15px;
@@ -117,6 +158,9 @@ export default {
   }
 }
 @media (min-width: 1240px) {
+  #app {
+    min-height: auto;
+  }
   .link {
     a {
       top: 13px;
