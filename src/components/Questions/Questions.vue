@@ -60,6 +60,7 @@ export default {
         meta: uuid(),
         data:{
           quest: this.getCurrentQuest.quest,
+          id: this.getCurrentQuest.id,
           answer: event.target.id
         }
       })

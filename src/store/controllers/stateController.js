@@ -2,6 +2,7 @@ import { QUESTIONS } from '../../const/questions'
 import { STATE } from '../../const/const'
 import { RESULT } from '../../const/result'
 import randomInteger from '../../libs/randomInteger'
+import sendResult from '../../libs/sendResult'
 
 export default function () {
   return store => {
@@ -54,6 +55,7 @@ export default function () {
           case 'ui/SET_SHOW_RESULT':
             result = getter['quest/getAllAnswers'].reduce((sum, current) => sum + +current.answer, 0);
             console.log(result)
+            sendResult(getter['quest/getAllAnswers'])
             if (!result) {
               dispatch('quest/setResult', {
                 meta: payload.meta,

@@ -37,25 +37,8 @@ export default {
     Questions,
     Result
   },
-    mounted () {
-      this.audio = new Audio()
-      this.audio.src = this.AUDIO_MAIN
-      this.audio.loop = true
-      this.audio.preload = 'auto'
-      this.audio.play()
-      window.scrollTo(0, 0);
-  },
-  destroyed () {
-    if (this.audio) {
-      this.audio.pause()
-      this.audio.remove()
-      this.audio = null
-    }
-  },
   data: () => ({
     SCENARIOS,
-    AUDIO_MAIN: require('./assets/sound/main.mp3'),
-    audio: null,
     TEXT
   }),
   computed: {
