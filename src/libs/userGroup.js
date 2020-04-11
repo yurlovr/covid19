@@ -3,9 +3,10 @@ import { RESULT_PROMOBOT } from '../const/result'
 export default function getUserGroup (answers) {
   let result = null
   const temerature = +answers[0].answer === 1
-  const spo = +answers[answers.length - 1].answer
+  const spo = +answers[answers.length - 1].answer.replace('%', '')
   const arrayForAnalize = answers.filter((a, index) => index !== 0 && index !== answers.length - 1)
   const arrayTrueAnswers = arrayForAnalize.filter(a => +a.answer === 1)
+  console.log('arrayTrueAnswers', arrayTrueAnswers)
   // 3 - группа один из 6, 7, 8
   if (arrayTrueAnswers.find(a => [6, 7, 8].includes(a.id))) {
     result = 3
@@ -25,7 +26,7 @@ export default function getUserGroup (answers) {
 
   // 4 группа нет контактов и температуры 6, 7, 8, 9
   if (!temerature && !arrayTrueAnswers.find(a => [6, 7, 8, 9].includes(a.id))) result = 4
-  return getTextResult(result = 5, spo)
+  return getTextResult(result || 5, spo)
 }
 function getTextResult(result, spo) {
   if (result === 4) return RESULT_PROMOBOT.VERY_GOOD

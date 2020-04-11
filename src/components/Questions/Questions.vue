@@ -89,6 +89,9 @@ export default {
     ]),
     spo: {
       get () {
+        if (this.getSPO.length === 2) {
+          return this.getSPO + '%'
+        }
         return this.getSPO
       },
       set(val) {
