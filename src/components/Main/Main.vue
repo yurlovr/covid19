@@ -7,7 +7,7 @@
           <span class="star">*</span>
         </h1>
         <h4 class="block_container-header-sub">
-          {{text.subHeader}}
+          {{text.subHeader}} <br/>  (COVID-19)!
         </h4>
       </div>
     </v-row>

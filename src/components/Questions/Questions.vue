@@ -97,7 +97,7 @@ export default {
       set(val) {
         // проверку на только цифры и точка
       const valid = /^\d+$/.test(val)
-      if (+val > 98 || +val < 92 || !valid) {
+      if (+val > 98 || +val < 90 || !valid) {
         this.error = true
       } else {
         this.error = false

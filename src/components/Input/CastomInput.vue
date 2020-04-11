@@ -16,7 +16,7 @@
             @blur="onBlur"
       />
       <span v-if="error" class="error">
-        Не верное значение
+        Неверное значение
       </span>
     </label>
   </form>

@@ -12,7 +12,7 @@
           v-show="showComponent === SCENARIOS.MAIN"
       >
         <p class="link_text">
-          *Данные тест носит лишь ознакомительный характер, и сделан для того, чтобы Вы узнали все основные симптомы коронавируса.
+          *Данный тест носит лишь ознакомительный характер, и сделан для того, чтобы Вы узнали все основные симптомы коронавирусной инфекции (COVID-19).
           <br/>
           Для получения официальной информации Вы можете пройти по ссылке:
           <a href="https://xn--80aesfpebagmfblc0a.xn--p1ai/" target="blank">
@@ -116,7 +116,7 @@ export default {
     height: 40px;
     margin-left: 20px;
     position: absolute;
-    top: 70px;
+    top: 93px;
     background-image: url('./assets/images/logo.svg');
   }
 }
@@ -127,7 +127,7 @@ export default {
     padding-bottom: 20px;
     font-size: 12px;
     a {
-      top: 68px;
+      top: 66px;
     }
   }
 }
@@ -153,7 +153,7 @@ export default {
   }
   .link {
     a {
-      top: 15px;
+      top: 12px;
     }
   }
 }

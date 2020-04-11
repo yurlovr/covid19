@@ -9,8 +9,11 @@
     </v-row>
     <v-row class="result">
       <div class="block_result">
+        <p class="group">
+          {{getGroup}}
+        </p>
         <p class="text">
-          {{getResult}}
+          {{getResult.text}}
         </p>
       </div>
     </v-row>
@@ -42,7 +45,8 @@ export default {
   },
   computed: {
     ...mapGetters('quest', [
-      'getResult'
+      'getResult',
+      'getGroup'
     ])
   },
   methods: {
@@ -71,13 +75,37 @@ export default {
   font-size: 35px;
   font-weight: normal;
 }
+.group {
+  position: relative;
+  font-weight: 500;
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 55px;
+  padding-left: 50px;
+  padding-right: 50px;
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    width: 900px;
+    height: 2px;
+    left: 0;
+    background-color: #FFFFFF;
+  }
+  &::before {
+    top: -25px;
+  }
+  &::after {
+    bottom: -25px;
+  }
+}
 @media (max-width: 600px) {
   .container {
     padding-bottom: 50px;
   }
   .block_container {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 40px;
   }
   .block_container-header {
     font-size: 55px;
@@ -90,8 +118,8 @@ export default {
   .block_result {
     margin: 0 auto;
     & .text{
-      padding-left: 5px;
-      padding-right: 5px;
+      padding-left: 20px;
+      padding-right: 20px;
       line-height: 40px;
       text-align: center;
       font-size: 30px;
@@ -165,7 +193,7 @@ export default {
     margin-bottom: 50px;
   }
   .result {
-    margin-bottom: 100px;
+    margin-bottom: 35px;
   }
   .block_result {
     .text {
@@ -187,6 +215,30 @@ export default {
   .block_result {
     .text {
       max-width: 900px;
+    }
+  }
+  .group {
+    position: relative;
+    font-weight: 500;
+    text-align: center;
+    max-width: 900px;
+    margin-bottom: 55px;
+    padding-left: 50px;
+    padding-right: 50px;
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      width: 900px;
+      height: 2px;
+      left: 0;
+      background-color: #FFFFFF;
+    }
+    &::before {
+      top: -25px;
+    }
+    &::after {
+      bottom: -25px;
     }
   }
 }

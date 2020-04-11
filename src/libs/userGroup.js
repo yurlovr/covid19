@@ -1,4 +1,4 @@
-import { RESULT_PROMOBOT } from '../const/result'
+import { RESULT_PROMOBOT, GROUP } from '../const/result'
 
 export default function getUserGroup (answers) {
   let result = null
@@ -25,13 +25,18 @@ export default function getUserGroup (answers) {
   }
 
   // 4 группа нет контактов и температуры 6, 7, 8, 9
-  if (!temerature && !arrayTrueAnswers.find(a => [6, 7, 8, 9].includes(a.id))) result = 4
-  return getTextResult(result || 5, spo)
+  if (!temerature && !arrayTrueAnswers.find(a => [6, 7, 8].includes(a.id))) result = 4
+  return {result: getTextResult(result || 5, spo), group: getGroup(result || 5)}
 }
 function getTextResult(result, spo) {
+  console.log('result',result)
   if (result === 4) return RESULT_PROMOBOT.VERY_GOOD
-  if (spo <= 93) return RESULT_PROMOBOT.NOT_GOOD
-  if (result === 3 && spo > 93) return RESULT_PROMOBOT.BAD
-  if (result !== 3 && spo > 93 && spo < 95) return RESULT_PROMOBOT.BAD
   if (result === 5) return RESULT_PROMOBOT.GOOD
+  if (spo <= 93) return RESULT_PROMOBOT.NOT_GOOD
+  // if (result === 3 && spo > 93) return RESULT_PROMOBOT.BAD
+  // if (result !== 3 && spo > 93) return RESULT_PROMOBOT.BAD
+  if (spo > 93) return RESULT_PROMOBOT.BAD
+}
+function getGroup(data) {
+ return GROUP[data]
 }

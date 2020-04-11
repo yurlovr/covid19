@@ -73,7 +73,11 @@ export default function () {
             sendResult(getter['quest/getAllAnswers'])
               dispatch('quest/setResult', {
                 meta: payload.meta,
-                data: testResult
+                data: testResult.result
+              })
+              dispatch('quest/setGroup', {
+                meta: payload.meta,
+                data: testResult.group
               })
               arrayIdQuestion = QUESTIONS_PROMOBOT.filter(i => i.id)
               dispatch('quest/setInitialState', {
