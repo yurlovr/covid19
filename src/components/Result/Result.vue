@@ -132,6 +132,14 @@ export default {
   .button_start {
     font-size: 25px;
   }
+  .group {
+    // max-width: 400px;
+    &::before,
+    &::after {
+      max-width: 260px;
+      left: 15%;
+    }
+  }
 }
 @media (min-width: 600px) {
   .container {
@@ -167,6 +175,14 @@ export default {
   .button_start {
     font-size: 25px;
   }
+  .group {
+    // max-width: 400px;
+    &::before,
+    &::after {
+      max-width: 480px;
+      left: 11%;
+    }
+  }
 }
 @media (min-width: 768px) {
   .container {
@@ -184,6 +200,14 @@ export default {
       padding-right: 70px;
     }
   }
+  .group {
+    // max-width: 400px;
+    &::before,
+    &::after {
+      max-width: 600px;
+      left: 11%;
+    }
+  }
 }
 @media (min-width: 1024px) {
   .container {
@@ -198,6 +222,14 @@ export default {
   .block_result {
     .text {
       max-width: 900px;
+    }
+  }
+  .group {
+    // max-width: 400px;
+    &::before,
+    &::after {
+      max-width: 800px;
+      left: 6%;
     }
   }
 }
@@ -229,7 +261,7 @@ export default {
     &::after {
       position: absolute;
       content: '';
-      width: 900px;
+      max-width: 900px;
       height: 2px;
       left: 0;
       background-color: #FFFFFF;
