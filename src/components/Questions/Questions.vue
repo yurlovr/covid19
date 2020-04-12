@@ -15,7 +15,7 @@
                   :refInput="'spo'"
                   :error="error"
                   v-on:changeSPO="newSPO"
-                  :maxLength="'2'"
+                  :maxLength="'3'"
                   :onFocus="onFocus"
                   :onBlur="onBlur"
       />
@@ -89,7 +89,10 @@ export default {
     ]),
     spo: {
       get () {
-        if (this.getSPO.length === 2) {
+        if (this.getSPO.length === 2 && +this.getSPO <= 99 && this.getSPO.indexOf('1') === -1) {
+          return this.getSPO + '%'
+        }
+        if (this.getSPO.length === 3 && +this.getSPO === 100) {
           return this.getSPO + '%'
         }
         return this.getSPO
@@ -97,7 +100,7 @@ export default {
       set(val) {
         // проверку на только цифры и точка
       const valid = /^\d+$/.test(val)
-      if (+val > 98 || +val < 90 || !valid) {
+      if (+val > 100 || +val < 90 || !valid) {
         this.error = true
       } else {
         this.error = false
@@ -209,7 +212,7 @@ export default {
     line-height: 50px;
   }
   .button_row {
-    // margin-bottom: 200px;
+    align-items: flex-start;
   }
 }
 @media (min-width: 768px) {
@@ -253,6 +256,9 @@ export default {
   }
   .button_start:hover {
     background-color: #bed7e6;
+  }
+  .button_row {
+    align-items: flex-start;
   }
 }
 .anime {

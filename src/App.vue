@@ -159,7 +159,7 @@ export default {
 }
 @media (min-width: 1240px) {
   #app {
-    min-height: auto;
+    min-height: calc(100vh - 49px);
   }
   .link {
     a {

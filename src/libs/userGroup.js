@@ -30,7 +30,8 @@ export default function getUserGroup (answers) {
 }
 function getTextResult(result, spo) {
   console.log('result',result)
-  if (result === 4) return RESULT_PROMOBOT.VERY_GOOD
+  if (result === 4 && spo < 93) return RESULT_PROMOBOT.GOOD_NEED_MEDIC
+  if (result === 4 && spo >= 93) return RESULT_PROMOBOT.VERY_GOOD
   if (result === 5) return RESULT_PROMOBOT.GOOD
   if (spo <= 93) return RESULT_PROMOBOT.NOT_GOOD
   // if (result === 3 && spo > 93) return RESULT_PROMOBOT.BAD
@@ -38,5 +39,5 @@ function getTextResult(result, spo) {
   if (spo > 93) return RESULT_PROMOBOT.BAD
 }
 function getGroup(data) {
- return GROUP[data]
+  return GROUP[data]
 }

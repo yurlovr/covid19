@@ -1,7 +1,9 @@
 import uuid from 'uuid'
 // 'https://covid19-quest.herokuapp.com/api/data' 'http://localhost:3000/api/data'
 export default function sendResult (answers) {
-  fetch('http://localhost:3000/api/data', {
+  // console.log(answers)
+  // console.log(uuid())
+  fetch('https://covid19-quest.herokuapp.com/api/data', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

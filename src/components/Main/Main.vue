@@ -114,6 +114,7 @@ export default {
 @media (min-width: 768px), (min-width: 900px) {
   .block_container-header {
     margin-bottom: 50px!important;
+    margin-top: 0;
   }
   .button_row {
     margin-top: 50px;
@@ -135,7 +136,7 @@ export default {
 }
 @media (min-width: 1240px) {
   .center {
-    margin-top: 80px!important;
+    margin-top: 10px!important;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;

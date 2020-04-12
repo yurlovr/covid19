@@ -237,6 +237,7 @@ export default {
 @media (min-width: 1240px) {
   .block_container-header {
     margin-bottom: 50px;
+    margin-top: 0;
   }
   .button_row {
     margin-bottom: 0;
