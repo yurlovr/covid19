@@ -4,7 +4,7 @@ function initialState () {
     currentQuest: null,
     answerCurrentQuest: null,
     allAnswers: [],
-    spo: '',
+    spo: '98',
   }
 }
 
